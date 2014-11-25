@@ -1,4 +1,4 @@
-/* Angular JS by AAK & MOIN */
+/* Angular JS by AAK */
 /* Date: 1 Sept 2014 */
 /* Version : 1.0 */
 
@@ -14,20 +14,7 @@ var app = angular.module('app', []);
 app.controller('ws', ['$scope', '$rootScope','alertService',
     function($scope, $rootScope, alertService) {
 	
-	//initSwappService.initSwapp();
-	/*alert("in ws controller");
-	var request = {
-                task_request: "Session/key",
-                data: localStorage.local_key
-        }
-	SocketService.getWSdata(request).then(function(data) {
-		console.log("from ws controller , received session_key");
-	}, function(error) {
-            // promise rejected, could log the error with: console.log('error', error);
-            console.log("No promise");
-        });*/
-
-
+	
     $scope.success = function(){
         alertService.add("success", "Success: It works! ", 3000);
     }
