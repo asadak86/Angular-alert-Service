@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Alert Service</title>
+    
+        
+    <!-- Core jQuery -->
+   
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+        <!--link rel="stylesheet" href="//rawgit.com/twbs/bootstrap/v3.3.0/dist/css/bootstrap.css" -->
+   
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- script src="assets/dist/js/ie-emulation-modes-warning.js"></script -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+.sw4_notify {
+   position: fixed;
+top: 0;
+width: 100%;
+z-index: 999999;
+border-radius: 0 !important;
+}
+
+.sw4_notify > alert{
+
+width: 100% ;
+display: block;
+border-radius: 0 !important;
+margin-bottom: 10px;
+}
+
+
+    </style>
+    
+
+  </head>
+
+  <body ng-controller="ws">
+ <!-- START : Alert Messages -->
+ <div class="sw4_notify">
+  <alert ng-repeat="alert in alerts" type="alert.type" class="alert alert-{{alert.type}}">{{ alert.msg }} <button type="button" class="close" ng-click="closeAlert($index)"><span aria-hidden="true">&times;</span></button></alert>
+</div>
+<!-- END : Alert Messages -->
+    
+ 
+
+  <div class="col-sm-12 ">
+  This is Example of Alert Service  
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <a ng-click="success()" class="btn btn-primary">Success Alert</a> 
+  <a ng-click="error()" class="btn btn-primary">Error Alert</a>  
+
+
+ </div>
+
+ 
+	<script src="js/angular.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/alertService.js"></script>
+  
+    
+    
+  
+
+    
+
+   
+    
+  </body>
+</html>
+
