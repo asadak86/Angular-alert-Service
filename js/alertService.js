@@ -12,7 +12,7 @@ app.factory('alertService', function($rootScope, $timeout) {
     $rootScope.alerts = [];
 
     alertService.add = function(type, msg, timeout) {
-     // $rootScope.alerts.push({'type': type, 'msg': msg});
+     
      $rootScope.alerts.push({
             type: type,
             msg: msg,
@@ -24,14 +24,14 @@ app.factory('alertService', function($rootScope, $timeout) {
         if (timeout) {
         console.log("Inside Timeout :" + timeout) ;
             $timeout(function(){ 
-               // console.log("Inside Timeout Function :") ;
+               
                 alertService.closeAlert(this); 
             }, timeout); 
         }
     };
 
     alertService.closeAlert = function(index) {
-     //   console.log("close index" + index);
+     
       $rootScope.alerts.splice(index, 1);
     };
 
